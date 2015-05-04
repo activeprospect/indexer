@@ -1,0 +1,15 @@
+{
+  "name": "@activeprospect/indexer",
+  "description": "A Node.JS module that exposes a directory of javascript or coffeescript files as a module indexed by file name",
+  "version": "1.0.0",
+  "repository": "https://github.com/activeprospect/leadconduit-api",
+  "scripts": {
+    "prepublish": "cake clean build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "coffee-script": "^1.9.2",
+    "mocha": "^2.2.4"
+  }
+}
