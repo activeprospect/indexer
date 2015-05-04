@@ -3,8 +3,7 @@
 This Node.JS module exports a directory of JavaScript (or CoffeeScript) files as a module. This is useful when you have
 a directory of sources files and you want each source file to be exposed as a module.
 
-
-[![Build Status](https://magnum.travis-ci.com/activeprospect/indexer.svg?token=482wC8iv8U56UifHfWLx)](https://magnum.travis-ci.com/activeprospect/indexer)
+[![Build Status](https://travis-ci.org/activeprospect/indexer.svg)](https://travis-ci.org/activeprospect/indexer)
 
 ### Setup
 
