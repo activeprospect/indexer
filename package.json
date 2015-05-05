@@ -1,7 +1,7 @@
 {
   "name": "@activeprospect/indexer",
   "description": "A Node.JS module that exposes a directory of javascript or coffeescript files as a module indexed by file name",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "repository": "activeprospect/indexer",
   "bugs": {
     "url": "https://github.com/activeprospect/indexer/issues",
