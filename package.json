@@ -2,7 +2,12 @@
   "name": "@activeprospect/indexer",
   "description": "A Node.JS module that exposes a directory of javascript or coffeescript files as a module indexed by file name",
   "version": "1.0.0",
-  "repository": "https://github.com/activeprospect/leadconduit-api",
+  "repository": "activeprospect/indexer",
+  "bugs": {
+    "url": "https://github.com/activeprospect/indexer/issues",
+    "email": "dev@activeprospect.com"
+  },
+  "license": "MIT",
   "scripts": {
     "prepublish": "cake clean build",
     "test": "cake test"
