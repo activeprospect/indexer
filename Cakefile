@@ -6,7 +6,7 @@ path = require 'path'
 task 'build', ->
   coffeePath = './node_modules/coffee-script/bin/coffee'
   if fs.existsSync(coffeePath)
-    run "#{coffeePath} -o lib -c src"
+    run "rm -rf ./lib; #{coffeePath} -o lib -c src"
   else
     console.log('> skipping build because coffee-script is not installed')
     process.exit 1
@@ -14,9 +14,6 @@ task 'build', ->
 task 'test', ->
   path = "spec/*-spec.coffee"
   run "./node_modules/.bin/mocha #{path} --recursive --compilers coffee:coffee-script/register --reporter spec --colors"
-
-task 'clean', ->
-  run 'rm -fr ./lib'
 
 run = (command) ->
   cmd = spawn '/bin/sh', ['-c', command]
