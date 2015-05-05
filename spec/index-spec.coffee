@@ -33,3 +33,7 @@ it 'should ignore index file', ->
 it 'should support javascript', ->
   fs.writeFileSync(path.join(modulePath, 'three.js'), 'module.exports = "index";')
   assert.deepEqual indexer(modulePath, mod), ['one', 'three', 'two']
+
+it 'should ignore files', ->
+  assert.deepEqual indexer(modulePath, mod, 'one'), ['two']
+  assert.deepEqual indexer(modulePath, mod, 'one', 'two'), []

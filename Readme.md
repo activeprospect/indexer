@@ -19,11 +19,23 @@ zoo
 
 Add an index file (`zoo/index.js`) which delegates to the indexer module:
 
-```JavaScript
+```javascript
 var path = require('path');
 
-var indexer = require('indexer');
-indexer(__dirname, module);
+var index = require('indexer');
+index(__dirname, module);
+```
+
+To exclude certain files from being indexed:
+
+```javascript
+var path = require('path');
+
+var index = require('indexer');
+
+// exclude ape and donkey
+index(__dirname, module, 'ape', 'donkey');
+// => ['zebra']
 ```
 
 
@@ -31,7 +43,7 @@ indexer(__dirname, module);
 
 Assuming the above setup, to use the `zoo` module:
 
-```JavaScript
+```javascript
 var zoo = require('zoo');
 
 zoo.ape    // returns the module defined in zoo/ape.js
