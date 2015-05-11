@@ -42,6 +42,11 @@ describe 'Index', ->
       assert.deepEqual Object.keys(index(modulePath, mod)), ['one', 'two']
 
 
+    it 'should ignore non-script file', ->
+      fs.writeFileSync(path.join(modulePath, 'docs.md'), '## My Docs')
+      assert.deepEqual Object.keys(index(modulePath, mod)), ['one', 'two']
+
+
     it 'should support javascript', ->
       fs.writeFileSync(path.join(modulePath, 'three.js'), 'module.exports = "index";')
       assert.deepEqual Object.keys(index(modulePath, mod)), ['one', 'three', 'two']
@@ -70,6 +75,11 @@ describe 'Index', ->
     it 'should ignore index file', ->
       fs.writeFileSync(indexFile, 'module.exports = "index"')
       assert.deepEqual Object.keys(index(modulePath)), ['one', 'two']
+
+
+    it 'should ignore non-script file', ->
+      fs.writeFileSync(path.join(modulePath, 'docs.md'), '## My Docs')
+      assert.deepEqual Object.keys(index(modulePath, mod)), ['one', 'two']
 
 
     it 'should support javascript', ->

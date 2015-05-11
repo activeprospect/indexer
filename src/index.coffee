@@ -13,8 +13,12 @@ module.exports = (dir, mod, ignoreModules...) ->
       {}
 
   # resolve names of modules in the directory
-  moduleNames = fs.readdirSync(dir).map (f) ->
-    path.basename(path.basename(f, '.js'), '.coffee')
+  moduleNames = fs.readdirSync(dir).filter (f) ->
+    ext = path.extname(f)
+    ext == '.js' or ext == '.coffee'
+
+  moduleNames = moduleNames.map (moduleName) ->
+    path.basename(path.basename(moduleName, '.js'), '.coffee')
 
   # ignore specified files and the index file
   unless ignoreModules.indexOf('index') >= 0
