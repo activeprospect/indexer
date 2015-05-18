@@ -1,6 +1,9 @@
 fs = require('fs')
 path = require('path')
 
+isDirWithIndexFile = (dir) ->
+  return false unless fs.lstatSync(dir).isDirectory()
+  fs.existsSync(path.join(dir, 'index.js')) or fs.existsSync(path.join(dir, 'index.coffee'))
 
 module.exports = (dir, mod, ignoreModules...) ->
 
@@ -15,7 +18,7 @@ module.exports = (dir, mod, ignoreModules...) ->
   # resolve names of modules in the directory
   moduleNames = fs.readdirSync(dir).filter (f) ->
     ext = path.extname(f)
-    ext == '.js' or ext == '.coffee'
+    ext == '.js' or ext == '.coffee' or isDirWithIndexFile(path.join(dir, f))
 
   moduleNames = moduleNames.map (moduleName) ->
     path.basename(path.basename(moduleName, '.js'), '.coffee')
