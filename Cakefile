@@ -13,7 +13,7 @@ task 'build', ->
 
 task 'test', ->
   path = "spec/*-spec.coffee"
-  run "./node_modules/.bin/mocha #{path} --recursive --compilers coffee:coffee-script/register --reporter spec --colors"
+  run "./node_modules/.bin/mocha #{path} --recursive --require coffee-script/register --reporter spec --colors"
 
 run = (command) ->
   cmd = spawn '/bin/sh', ['-c', command]
