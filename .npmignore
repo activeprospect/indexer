@@ -1,4 +1,3 @@
-src
-spec
-Cakefile
+test
 .idea
+.vscode

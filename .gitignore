@@ -1,4 +1,5 @@
-lib
 node_modules
 .idea
+.vscode
 .DS_Store
+bulk-decaffeinate.config.js
