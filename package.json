@@ -9,7 +9,6 @@
   },
   "license": "MIT",
   "scripts": {
-    "prepublish": "cake build",
     "test": "cake test"
   },
   "dependencies": {},
